@@ -12,7 +12,6 @@ public class LinkShortener {
 
     public String shortenURL(String longURL) {
         if (urlMap.containsValue(longURL)) {
-            // Handle duplicate long URL
             return "Error: Duplicate long URL";
         }
 
@@ -23,7 +22,6 @@ public class LinkShortener {
 
     public String expandURL(String shortURL) {
         if (!urlMap.containsKey(shortURL)) {
-            // Handle invalid short URL
             return "Error: Invalid short URL";
         }
 
@@ -31,7 +29,6 @@ public class LinkShortener {
     }
 
     private String generateShortURL() {
-        // Simple hash function to generate short URL
         String shortURL = "";
         for (int i = 0; i < SHORT_URL_LENGTH; i++) {
             shortURL += (char) ('a' + (int) (Math.random() * 26));
